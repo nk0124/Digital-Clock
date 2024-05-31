@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Digital Clock</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+	   function clock(){
+	   	var dayname=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','satursday'];
+	   	var datetime=new Date();//create an object of date class
+	   	var d=datetime.getDate();
+	   	var m=datetime.getMonth();
+	   	var y=datetime.getFullYear();
+	   	var h=datetime.getHours();
+	   	var i=datetime.getMinutes();
+	   	var s=datetime.getSeconds();
+	   	var a=datetime.getDay();
+	   	document.getElementById('date').textContent=dayname[a]+" "+d+"-"+(m+1)+"-"+y;
+	   		document.getElementById('hour').textContent=h;
+	   			document.getElementById('min').textContent=i;
+	   				document.getElementById('sec').textContent=s;
+	   				setTimeout(clock,2000)
+	   			}
+	</script>
+</head>
+<body  onload="clock()">
+<main class="pb-5">
+	<p><a href="index.html">&larr; Home</a></p>
+
+	<div class="card tcenter pb-5">
+	<h1>Today is</h1>
+	<p class="title tcenter"id="date"></p>
+	<h5>Now:</h5>
+	<div class="row">
+		<div class="col bg"><h1 id="hour"></h1></div>
+		<div class="col bg"><h1 id="min"></h1></div>
+		<div class="col bg"><h1 id="sec"></h1></div>
+	</div>
+		
+</div>
+	
+</main>
+</body>
+</html>
